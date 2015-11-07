@@ -1,0 +1,26 @@
+Public Class Form1
+    Private Sub Button1_Click(sender As Object, e As EventArgs)
+        Me.Close() 'เมื่อคลิกก็จะออกจากโปรแกรม 2
+    End Sub
+    Private Sub Button2_Click(sender As Object, e As EventArgs)
+        If TextBox1.Text = "" Or TextBox2.Text = "" Then
+            'ถ้า ชื่อผู้ใช้(textbox1) หรือ รหัสผ่าน(textbox2) เป็นค่าว่างหรือไม่ได้ระบุนั้นเอง 
+            'โปรแกรมก็จะแสดงกล่องข้อความบอกว่าคุ?ณกรอกข้อมูลไม่ครบ MessageBox.Show("คุณกรอกข้อมูลไม่คร?บ", "ข้อความจากระบบ", MessageBoxButtons.OK, MessageBoxIcon.Error) ElseIf TextBox1.Text = "Admin" And TextBox2.Text = "vb.net" Then 
+            'ถ้า ชื่อผู้ใช้(textbox1) = Admin และ รหัสผ่าน(textbox2) = vb.net 'โปรแกรมก็จะแสดงกล่องข้อความว่ายินดี?ต้อนรับเข้าสู่ระบบ MessageBox.Show("ยินดีต้อนรับเข้าสู?่ระบบ", "ข้อความจากระบบ", MessageBoxButtons.OK, MessageBoxIcon.Information) Me.Hide() 
+            'หลังจากนั้นฟอร์มนี้ก็จะซ่อนตัวเอง Form2.Show() 'และแสดงฟอร์ม2ออกมา Else 'ถ้าไม่เข้ากรณีใดๆเลย 
+            'โปรแกรมก็จะแสดงกล่องข้อความบอกว่า ชื่อผู้ใช้ หรือ รหัสผ่านไม่ถูกต้อง MessageBox.Show("ชื่อผู้ใช้ หรือ รหัสผ่านไม่ถูกต้อง", "ข้อความจากระบบ", MessageBoxButtons.OK, MessageBoxIcon.Warning) End If 
+        End If
+
+    End Sub
+
+    Private Sub Form1_Load(sender As Object, e As EventArgs)
+
+    End Sub
+
+    Private Sub Button2_Click_1(sender As Object, e As EventArgs) Handles Button2.Click
+
+        Form2.Show()
+        Form2.Caption = Form1.Label1.Caption  ' การส่งค่าจาก Label1 ใน form1 ไปยัง หัวของ Form2
+
+    End Sub
+End Class
